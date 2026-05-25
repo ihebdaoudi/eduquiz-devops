@@ -9,7 +9,7 @@ import { Questions } from '../../../model/questions.model';
 import { QuestionsService } from '../../../services/questions.service';
 import { ActivatedRoute } from '@angular/router';
 import { QuestionPaperService } from '../../../services/question-paper.service';
-import * as html2pdf from 'html2pdf.js';
+import html2pdf from 'html2pdf.js';
 import { SubQuestionService } from '../../../services/sub-question.service';
 
 @Component({

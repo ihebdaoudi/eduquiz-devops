@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class QuestionPaperService {
 
-  private baseUrl = 'http://localhost:8080/questionPaper'; 
+  private baseUrl = '/api/questionPaper'; 
 
   constructor(private http: HttpClient) { }
 

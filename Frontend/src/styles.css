@@ -33,7 +33,7 @@
 }
 
 .light .example-icon #github-icon {
-  --github-icon-path: url(../../Frontend/src/assets/github-mark.svg);
+  --github-icon-path: url('./assets/github-mark.svg');
 }
 
 .dark .mat-card{

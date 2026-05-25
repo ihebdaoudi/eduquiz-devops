@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: backend-config
+  namespace: eduquiz
+
+data:
+  SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/eduquiz?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+  SPRING_DATASOURCE_USERNAME: root
+  SPRING_DATASOURCE_PASSWORD: root

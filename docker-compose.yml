@@ -1,0 +1,33 @@
+services:
+  mysql-db:
+    image: mysql:8
+    container_name: mysql-container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: eduquiz
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  backend:
+    build: ./backend
+    container_name: backend-container
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql-db
+
+  frontend:
+    build: ./frontend
+    container_name: frontend-container
+    restart: always
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  mysql_data:

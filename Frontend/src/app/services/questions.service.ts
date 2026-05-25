@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class QuestionsService {
-  private baseUrl = 'http://localhost:8080/questions'; 
+  private baseUrl = '/api/questions'; 
 
   constructor(private http: HttpClient) { }
 
