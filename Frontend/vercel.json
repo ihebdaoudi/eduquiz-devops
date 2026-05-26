@@ -1,6 +1,6 @@
 {
   "buildCommand": "ng build",
-  "outputDirectory": "dist/frontend/browser",
+  "outputDirectory": "browser",
   "installCommand": "npm install",
   "framework": null,
   "rewrites": [
