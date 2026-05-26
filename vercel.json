@@ -1,8 +1,9 @@
 {
-  "installCommand": "cd Frontend && npm install",
-  "buildCommand": "cd Frontend && ng build",
-  "outputDirectory": "Frontend/browser",
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
+  "installCommand": "cd Frontend && npm install",
+  "buildCommand": "cd Frontend && node build-vercel.mjs",
+  "outputDirectory": "Frontend/browser",
   "rewrites": [
     {
       "source": "/(.*)",

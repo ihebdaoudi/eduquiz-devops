@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "node build-vercel.mjs",
+    "vercel-build": "node build-vercel.mjs",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
