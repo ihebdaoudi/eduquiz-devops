@@ -32,8 +32,10 @@ public class SecurityConfig {
 
         http.csrf(csrf -> csrf.disable())
                 .cors(Customizer.withDefaults())
-                .authorizeRequests().
-                requestMatchers("/auth/login").permitAll()
+                .authorizeRequests()
+                // Important: allow preflight requests (OPTIONS) so browser can validate CORS
+                .requestMatchers(org.springframework.http.HttpMethod.OPTIONS, "/**").permitAll()
+                .requestMatchers("/auth/login").permitAll()
                 .requestMatchers("/auth/currentUser").permitAll()
                 .requestMatchers("/user/**").permitAll()
                 .requestMatchers("/category/**").authenticated()

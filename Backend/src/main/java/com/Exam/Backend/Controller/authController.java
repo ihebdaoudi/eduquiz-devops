@@ -19,7 +19,6 @@ import com.Exam.Backend.Repository.*;
 import java.security.Principal;
 
 @RestController
-@CrossOrigin(origins = {"https://eduquiz-devopsv1.vercel.app", "http://localhost:4200"})
 @RequestMapping("/auth")
 public class authController {
 
