@@ -1,6 +1,6 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist/frontend/browser",
+  "buildCommand": "npm run vercel-build",
+  "outputDirectory": "public",
   "rewrites": [
     {
       "source": "/(.*)",
