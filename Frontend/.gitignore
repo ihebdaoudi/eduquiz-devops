@@ -2,6 +2,7 @@
 
 # Compiled output
 /dist
+/browser
 /public
 /tmp
 /out-tsc

@@ -1,6 +1,8 @@
 {
   "buildCommand": "npm run vercel-build",
-  "outputDirectory": "public",
+  "outputDirectory": "browser",
+  "installCommand": "npm install",
+  "framework": null,
   "rewrites": [
     {
       "source": "/(.*)",

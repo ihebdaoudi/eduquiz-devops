@@ -1,7 +1,8 @@
 {
   "installCommand": "cd Frontend && npm install",
   "buildCommand": "cd Frontend && npm run vercel-build",
-  "outputDirectory": "Frontend/public",
+  "outputDirectory": "Frontend/browser",
+  "framework": null,
   "rewrites": [
     {
       "source": "/(.*)",

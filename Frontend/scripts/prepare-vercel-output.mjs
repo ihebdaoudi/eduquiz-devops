@@ -2,7 +2,7 @@ import { cpSync, mkdirSync, rmSync } from 'fs';
 import { join } from 'path';
 
 const source = join('dist', 'frontend', 'browser');
-const target = 'public';
+const target = 'browser';
 
 rmSync(target, { recursive: true, force: true });
 mkdirSync(target, { recursive: true });
