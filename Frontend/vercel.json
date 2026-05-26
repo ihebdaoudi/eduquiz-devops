@@ -1,6 +1,6 @@
 {
-  "buildCommand": "npm run vercel-build",
-  "outputDirectory": "browser",
+  "buildCommand": "ng build",
+  "outputDirectory": "dist/frontend/browser",
   "installCommand": "npm install",
   "framework": null,
   "rewrites": [
