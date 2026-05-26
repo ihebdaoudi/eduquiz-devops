@@ -2,48 +2,49 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Questions } from '../model/questions.model';
 import { Observable } from 'rxjs';
+import baseUrl from './helper';
 
 @Injectable({
   providedIn: 'root'
 })
 export class QuestionsService {
-  private baseUrl = '/api/questions'; 
+  private apiUrl = `${baseUrl}/questions`; 
 
   constructor(private http: HttpClient) { }
 
   addQuestion(question: any): Observable<Questions> {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this.http.post<Questions>(`${this.baseUrl}/add`, question,{headers});
+    return this.http.post<Questions>(`${this.apiUrl}/add`, question,{headers});
   }
 
   updateQuestion(id: number, question: any): Observable<Questions> {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this.http.put<Questions>(`${this.baseUrl}/update/${id}`, question,{headers});
+    return this.http.put<Questions>(`${this.apiUrl}/update/${id}`, question,{headers});
   }
 
   getAllQuestions(): Observable<Questions[]> {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this.http.get<Questions[]>(`${this.baseUrl}/getAll`,{headers});
+    return this.http.get<Questions[]>(`${this.apiUrl}/getAll`,{headers});
   }
 
   getQuestionById(qId: number): Observable<Questions> {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this.http.get<Questions>(`${this.baseUrl}/${qId}`,{headers});
+    return this.http.get<Questions>(`${this.apiUrl}/${qId}`,{headers});
   }
 
   deleteQuestion(qId: number): Observable<void> {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this.http.delete<void>(`${this.baseUrl}/delete/${qId}`,{headers});
+    return this.http.delete<void>(`${this.apiUrl}/delete/${qId}`,{headers});
   }
 
   getQuestionsOfQuestionPaper(questionPaperId: number): Observable<Questions[]> {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this.http.get<Questions[]>(`${this.baseUrl}/getByQuestionPaper/${questionPaperId}`,{headers});
+    return this.http.get<Questions[]>(`${this.apiUrl}/getByQuestionPaper/${questionPaperId}`,{headers});
   }
 }
